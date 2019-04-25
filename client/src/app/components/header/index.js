@@ -8,9 +8,15 @@ const Header = props => {
     <nav className="header">
       <a href="/">amble</a>
       <ul>
-        <li>about</li>
-        <li>walks</li>
-        <li>login</li>
+        <li>
+          <a href="/">about</a>
+        </li>
+        <li>
+          <a href="/walks">walks</a>
+        </li>
+        <li>
+          <a href="/">login</a>
+        </li>
       </ul>
     </nav>
   );

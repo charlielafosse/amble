@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+// FAILING TO PASS ANYTHING ACROSS IN THE REQUEST BODY
+// I THINK YOU NEED TO BE USING MORE COMPONENTS AND HANDLECHANGE AND HANDLESUBMIT
 class AddWalk extends Component {
   // Initialize the state
   state = {};

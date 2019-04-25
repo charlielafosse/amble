@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 1.2rem;
   /* background: linear-g/radient(70deg, blue, pink); */
 }
 
