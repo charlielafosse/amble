@@ -1,4 +1,5 @@
 .walk {
   border: 5px dashed red;
-  margin-bottom: 2%;
+  margin: 1rem;
+  padding: 1rem;
 }

@@ -1,14 +1,38 @@
 import React, { Component } from "react";
-// FAILING TO PASS ANYTHING ACROSS IN THE REQUEST BODY
-// I THINK YOU NEED TO BE USING MORE COMPONENTS AND HANDLECHANGE AND HANDLESUBMIT
+import { withRouter } from "react-router-dom";
+// look up how withRouter works! and history too
 class AddWalk extends Component {
   // Initialize the state
-  state = {};
+  state = {
+    location: "",
+    difficulty: "Stroll"
+  };
+
+  handleChange = ({ target }) => {
+    this.setState({ [target.name]: target.value });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    const data = JSON.stringify(this.state);
+    fetch("/api/addWalk", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: data
+    })
+      .then(res => {
+        console.log("woooo", res);
+        this.props.history.push("/walks");
+      })
+      .catch(err => console.log("fetch error", err));
+  };
 
   render() {
     return (
       <div className="walkForm">
-        <form action="/api/addWalk" method="POST">
+        <form>
           <h1>Add a walk</h1>
           <label htmlFor="location-of-walk">Location</label>
           <input
@@ -18,22 +42,29 @@ class AddWalk extends Component {
             id="location-of-walk"
             placeholder="Where did you walk?"
             required
+            onChange={this.handleChange}
           />
           <br />
           <label htmlFor="difficulty">Difficulty</label>
-          <select name="difficulty" id="difficulty">
-            <option value="stroll">Stroll</option>
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="brisk">Brisk</option>
-            <option value="exhausting">Exhausting</option>
+          <select
+            onChange={this.handleChange}
+            name="difficulty"
+            id="difficulty"
+          >
+            <option value="Stroll">Stroll</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Brisk">Brisk</option>
+            <option value="Exhausting">Exhausting</option>
           </select>
           <br />
-          <button type="submit">Submit</button>
+          <button onClick={this.handleSubmit} type="submit">
+            Submit
+          </button>
         </form>
       </div>
     );
   }
 }
 
-export default AddWalk;
+export default withRouter(AddWalk);

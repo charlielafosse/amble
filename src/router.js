@@ -21,8 +21,12 @@ router.get("/api/getWalkData", (req, res) => {
 router.post("/api/addWalk", (req, res) => {
   const newWalk = req.body;
   console.log("in post route req body is", newWalk);
-  // postWalk(newWalk);
-  res.redirect("/walks");
+  postWalk(newWalk)
+    .then(data => {
+      console.log("RESULT FROM POSTWALK QUERY", data);
+      res.send(data);
+    })
+    .catch(err => console.log("error", err));
 });
 
 // Handles any requests that don't match the ones above
