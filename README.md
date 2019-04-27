@@ -2,7 +2,7 @@
 
 amble is a project that aims to connect people with their outdoors surroundings, as well as each other.
 
-### what is ambling? :information_desk_person:
+### What is ambling? :information_desk_person:
 
 ambling is an opportunity to get outside, to exercise, and to better understand the environment we live in.
 
@@ -10,7 +10,7 @@ it also helps to facilitate conversation, and the sharing of ideas and concerns.
 
 when we walk, we talk!
 
-### the app :iphone:
+### The app :iphone:
 
 User Stories
 As a user I can:
@@ -21,7 +21,7 @@ As a user I can:
 - See a record of ambles that I've been a part of
 
 
-### technical aims and personal goals :muscle:
+### Technical aims and personal goals :muscle:
 - Get to grips with functional components in React
 - Try and implement a functional approach
 - Improve understanding of UX and Design
