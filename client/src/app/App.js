@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, BrowserRouter } from "react-router-dom";
 import "./App.css";
 import Header from "./components/header";
 import Home from "./pages/home";
@@ -11,18 +11,16 @@ class App extends Component {
     const App = () => (
       <div>
         <Header title="amble" />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/addWalk" component={AddWalk} />
-          <Route path="/walks" component={Walks} />
-        </Switch>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/addWalk" component={AddWalk} />
+            <Route path="/walks" component={Walks} />
+          </Switch>
+        </BrowserRouter>
       </div>
     );
-    return (
-      <Switch>
-        <App />
-      </Switch>
-    );
+    return <App />;
   }
 }
 
