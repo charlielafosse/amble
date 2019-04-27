@@ -1,38 +1,45 @@
 import React, { Component } from "react";
-
+import { withRouter } from "react-router-dom";
+import { WalkForm } from "../components/walkForm";
+// look up how withRouter works! and history too
 class AddWalk extends Component {
   // Initialize the state
-  state = {};
+  state = {
+    location: "",
+    difficulty: "Stroll"
+  };
+
+  handleChange = ({ target }) => {
+    this.setState({ [target.name]: target.value });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    const data = JSON.stringify(this.state);
+    fetch("/api/addWalk", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: data
+    })
+      .then(res => {
+        console.log("woooo", res);
+        this.props.history.push("/walks");
+      })
+      .catch(err => console.log("fetch error", err));
+  };
 
   render() {
     return (
       <div className="walkForm">
-        <form action="/api/addWalk" method="POST">
-          <h1>Add a walk</h1>
-          <label htmlFor="location-of-walk">Location</label>
-          <input
-            pattern="^[^<>]+$"
-            name="location"
-            type="text"
-            id="location-of-walk"
-            placeholder="Where did you walk?"
-            required
-          />
-          <br />
-          <label htmlFor="difficulty">Difficulty</label>
-          <select name="difficulty" id="difficulty">
-            <option value="stroll">Stroll</option>
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="brisk">Brisk</option>
-            <option value="exhausting">Exhausting</option>
-          </select>
-          <br />
-          <button type="submit">Submit</button>
-        </form>
+        <WalkForm
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+        />
       </div>
     );
   }
 }
 
-export default AddWalk;
+export default withRouter(AddWalk);

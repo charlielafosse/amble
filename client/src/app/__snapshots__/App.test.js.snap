@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders properly 1`] = `
+<div>
+  <nav
+    className="header"
+  >
+    <a
+      href="/"
+    >
+      amble
+    </a>
+    <ul>
+      <li>
+        <a
+          href="/"
+        >
+          about
+        </a>
+      </li>
+      <li>
+        <a
+          href="/walks"
+        >
+          walks
+        </a>
+      </li>
+      <li>
+        <a
+          href="/"
+        >
+          login
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div
+    className="App"
+  >
+    <h1>
+      Project Home
+    </h1>
+    <a
+      href="/addWalk"
+      onClick={[Function]}
+    >
+      <button
+        variant="raised"
+      >
+        Add a walk
+      </button>
+    </a>
+    <a
+      href="/walks"
+      onClick={[Function]}
+    >
+      <button
+        variant="raised"
+      >
+        See walks
+      </button>
+    </a>
+  </div>
+</div>
+`;
