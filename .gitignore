@@ -1,5 +1,3 @@
-config.env
-
 # dependencies
 /node_modules
 client/node_modules
@@ -11,6 +9,8 @@ client/node_modules
 
 # production
 /build
+
+bleep.env
 
 # misc
 .env
