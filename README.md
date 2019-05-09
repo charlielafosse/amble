@@ -8,7 +8,7 @@ ambling is an opportunity to get outside, to exercise, and to better understand 
 
 ### The app :iphone:
 
-User Stories
+#### User Stories
 As a user I can:
 - Explore other users' ambles
 - Connect with others who want to amble
