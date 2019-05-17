@@ -6,7 +6,7 @@ class Walks extends Component {
     data: []
   };
 
-  getWalkData() {
+  getWalkData = () => {
     fetch("/api/getWalkData")
       .then(res => res.json())
       .then(data => {
@@ -16,23 +16,39 @@ class Walks extends Component {
       .catch(err => {
         throw new Error("fetch failed!");
       });
-  }
-  componentDidMount() {
+  };
+
+  moreWalkInfo = (oneWalk) => {
+    this.setState({ oneWalk });
+  };
+
+  componentDidMount = () => {
     this.getWalkData();
-  }
+  };
 
   render() {
     if (!this.state.data) {
       return <p> page loading... </p>;
     }
     const { data } = this.state;
-    return (
-      <div className="walks">
-        {data.map(walk => (
-          <Walk data={walk} />
-        ))}
-      </div>
-    );
+    // const { oneWalk } = this.state;
+    if(!this.state.oneWalk){
+      return (
+        <div className="walks">
+          {data.map(walk => (
+            <Walk data={walk} moreWalkInfo={this.moreWalkInfo} />
+          ))}
+        </div>
+      );
+    } else {
+      console.log("BOO", this.state.oneWalk);
+      return (
+        <div>
+          <h1>here's a specific walk</h1>
+          <p>{this.state.oneWalk.location}</p>
+        </div>
+      )
+    }
   }
 }
 
