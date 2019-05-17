@@ -1,5 +1,9 @@
-const getAllData = require("./getAllData");
+const getUserData = require("./getUserData");
+const getWalkData = require("./getWalkData");
+const postWalk = require("./postWalk");
 
 module.exports = {
-  getAllData
+  getUserData,
+  getWalkData,
+  postWalk
 }
