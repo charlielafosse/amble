@@ -11,10 +11,10 @@
 //     });
 //   });
 
- export const getUserData = () => {
-   return fetch('/api/getData')
-   .then(res => res.json())
-   .catch(err => {
-     throw new Error("fetch failed!")
-   })
- }
+ // export const getUserData = () => {
+ //   return fetch('/api/getData')
+ //   .then(res => res.json())
+ //   .catch(err => {
+ //     throw new Error("fetch failed!")
+ //   })
+ // }
