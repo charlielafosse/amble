@@ -18,7 +18,7 @@ As a user I can:
 
 
 ### Technical aims and personal goals :muscle:
-- Get to grips with functional components in React
-- Try and implement a functional approach
+- Get to grips with React
+- Try and implement a functional approach and testing of components
 - Improve understanding of UX and Design
 - Brush up on SQL queries and relationships
