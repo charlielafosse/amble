@@ -2,9 +2,7 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 
-const getUserData = require("./queries/getUserData");
-const getWalkData = require("./queries/getWalkData");
-const postWalk = require("./queries/postWalk");
+const{ getUserData, getWalkData, postWalk } = require("./queries")
 
 router.get("/api/getWalkData", (req, res) => {
   console.log("hit the route");

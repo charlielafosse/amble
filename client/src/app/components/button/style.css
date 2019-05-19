@@ -1,0 +1,7 @@
+.myButton {
+  margin: 2%;
+}
+
+.myButton:hover {
+  color: white;
+}

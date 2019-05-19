@@ -1,38 +1,42 @@
 import React, { Component } from "react";
 import { Walk } from "../components/walk";
+// import { Redirect } from "react-router-dom"
 import("./style.css");
 class Walks extends Component {
-  state = {
-    data: []
-  };
+  state = {};
 
-  getWalkData() {
+  getWalkData = () => {
     fetch("/api/getWalkData")
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         this.setState({ data });
       })
       .catch(err => {
         throw new Error("fetch failed!");
       });
-  }
-  componentDidMount() {
+  };
+
+  // moreWalkInfo = (oneWalk) => {
+  //   this.setState({ oneWalk, redir: "/walkInfo" });
+  //   // is this risky? Should use a Promise or similar in case we redir before updating oneWalk?
+  // };
+
+  componentDidMount = () => {
     this.getWalkData();
-  }
+  };
 
   render() {
     if (!this.state.data) {
       return <p> page loading... </p>;
     }
     const { data } = this.state;
-    return (
-      <div className="walks">
-        {data.map(walk => (
-          <Walk data={walk} />
-        ))}
-      </div>
-    );
+      return (
+        <div className="walks">
+          {data.map(walk => (
+            <Walk data={walk} moreWalkInfo={this.moreWalkInfo} />
+          ))}
+        </div>
+      );
   }
 }
 

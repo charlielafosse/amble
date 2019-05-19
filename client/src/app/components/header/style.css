@@ -1,14 +1,17 @@
+
+
 .header {
-  color: blue;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 1.2rem;
+  font-weight: 600;
   /* background: linear-g/radient(70deg, blue, pink); */
 }
 
 a {
   text-decoration: none;
+  color: #808F7C;
   padding: 1rem;
 }
 

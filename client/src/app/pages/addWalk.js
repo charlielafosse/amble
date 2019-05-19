@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { WalkForm } from "../components/walkForm";
-// look up how withRouter works! and history too
+
 class AddWalk extends Component {
-  // Initialize the state
   state = {
     location: "",
-    difficulty: "Stroll"
+    difficulty: "Stroll",
+    redir: ""
   };
 
   handleChange = ({ target }) => {
@@ -24,13 +24,15 @@ class AddWalk extends Component {
       body: data
     })
       .then(res => {
-        console.log("woooo", res);
-        this.props.history.push("/walks");
+        this.setState({ redir: "/walks" });
       })
       .catch(err => console.log("fetch error", err));
   };
 
   render() {
+    if (this.state.redir) {
+      return <Redirect to={this.state.redir} />
+    }
     return (
       <div className="walkForm">
         <WalkForm
@@ -42,4 +44,4 @@ class AddWalk extends Component {
   }
 }
 
-export default withRouter(AddWalk);
+export default AddWalk;
