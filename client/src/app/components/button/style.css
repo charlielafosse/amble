@@ -1,3 +1,7 @@
-button {
-  border-radius: 50px;
+.myButton {
+  margin: 2%;
+}
+
+.myButton:hover {
+  color: white;
 }

@@ -1,10 +1,16 @@
 .walks {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   justify-content: flex-start;
 }
 
 .home {
   text-align: center;
   color: #808F7C;
+}
+
+.walkInfo {
+  text-align: center;
+  margin: 0 auto;
+  color: blue;
 }

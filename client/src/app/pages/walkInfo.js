@@ -4,14 +4,16 @@ import("./style.css");
 
 class WalkInfo extends Component {
   render () {
+    // problem: on refresh or re-render, we lose the props below and so redirect back to walks...
+    // might need to think about how we pass an id or similar into the url for better routing
     if(!this.props.location.data){
       return <Redirect to="/walks" />
     }
     return (
-      <>
-      <h1> Walk Info </h1>
-      <p>location eees {this.props.location.data.location}</p>
-      </>
+      <div className="walkInfo">
+      <h1>{this.props.location.data.location}</h1>
+      <p>Submitted by: </p>
+      </div>
     )
   }
 }
