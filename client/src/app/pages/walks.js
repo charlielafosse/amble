@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import { Walk } from "../components/walk";
-import { WalkInfo } from "../components/walkInfo";
+import { Redirect } from "react-router-dom"
+// import { WalkInfo } from "../components/walkInfo";
 import("./style.css");
 class Walks extends Component {
-  state = {
-    data: []
-  };
+  state = {};
 
   getWalkData = () => {
     fetch("/api/getWalkData")
@@ -19,7 +18,8 @@ class Walks extends Component {
   };
 
   moreWalkInfo = (oneWalk) => {
-    this.setState({ oneWalk });
+    this.setState({ oneWalk, redir: "/walkInfo" });
+    // is this risky? Should use a Promise or similar in case we redir before updating oneWalk?
   };
 
   componentDidMount = () => {
@@ -30,9 +30,8 @@ class Walks extends Component {
     if (!this.state.data) {
       return <p> page loading... </p>;
     }
-    const { data } = this.state;
-    const { oneWalk } = this.state;
-    if(!oneWalk){
+    const { data, redir, oneWalk } = this.state;
+    if(!redir){
       return (
         <div className="walks">
           {data.map(walk => (
@@ -41,9 +40,11 @@ class Walks extends Component {
         </div>
       );
     } else {
-      return (
-        <WalkInfo data={oneWalk} />
-      )
+      return <Redirect to={{
+            pathname: redir,
+            data: oneWalk
+        }}
+/>
     }
   }
 }

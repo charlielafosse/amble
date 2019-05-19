@@ -5,6 +5,7 @@ import Header from "./components/header";
 import Home from "./pages/home";
 import AddWalk from "./pages/addWalk";
 import Walks from "./pages/walks";
+import WalkInfo from "./pages/walkInfo";
 
 class App extends Component {
   render() {
@@ -16,6 +17,8 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/addWalk" component={AddWalk} />
             <Route path="/walks" component={Walks} />
+            <Route path="/walkInfo" render={routeProps => <WalkInfo {...routeProps} />}
+            />
           </Switch>
         </BrowserRouter>
       </div>
