@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-// import leaves from "../../assets/photos/leaves.png";
+// import park from "../../assets/photos/park.png";
 import { Button } from "../components/button";
 import("./style.css");
-// <img src={leaves} alt="watercolour drawing of leaves" />
-
 
 class Home extends Component {
   render() {
@@ -13,6 +10,9 @@ class Home extends Component {
       <h1>welcome</h1>
           <Button to="./addWalk" label="Add a walk" />
           <Button to="./walks" label="See walks" />
+      <div className="imageDiv">
+      {/*  <img src={park} alt="watercolour drawing of a park" /> */}
+      </div>
     </div>
     );
   }
