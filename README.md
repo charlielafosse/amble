@@ -4,15 +4,11 @@ amble is a project that aims to connect people with their outdoors surroundings,
 
 ### What is ambling? :information_desk_person:
 
-ambling is an opportunity to get outside, to exercise, and to better understand the environment we live in.
-
-it also helps to facilitate conversation, and the sharing of ideas and concerns.
-
-when we walk, we talk!
+ambling is an opportunity to get outside, to exercise, and to better understand the environments we live in.
 
 ### The app :iphone:
 
-User Stories
+#### User Stories
 As a user I can:
 - Explore other users' ambles
 - Connect with others who want to amble
