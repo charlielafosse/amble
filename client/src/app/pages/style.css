@@ -3,3 +3,8 @@
   flex-flow: row wrap;
   justify-content: flex-start;
 }
+
+.home {
+  text-align: center;
+  color: #808F7C;
+}

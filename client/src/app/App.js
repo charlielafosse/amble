@@ -10,7 +10,7 @@ import WalkInfo from "./pages/walkInfo";
 class App extends Component {
   render() {
     const App = () => (
-      <div>
+      <div className="app">
         <Header title="amble" />
         <BrowserRouter>
           <Switch>

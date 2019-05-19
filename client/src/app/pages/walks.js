@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Walk } from "../components/walk";
 import { Redirect } from "react-router-dom"
-// import { WalkInfo } from "../components/walkInfo";
 import("./style.css");
 class Walks extends Component {
   state = {};

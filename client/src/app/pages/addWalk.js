@@ -3,7 +3,6 @@ import { Redirect } from "react-router-dom";
 import { WalkForm } from "../components/walkForm";
 
 class AddWalk extends Component {
-  // Initialize the state
   state = {
     location: "",
     difficulty: "Stroll",

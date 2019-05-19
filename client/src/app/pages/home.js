@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import("./style.css");
 
 
 class Home extends Component {
   render() {
     return (
-    <div className="App">
+    <div className="home">
       <h1>welcome</h1>
       <Link to={'./addWalk'}>
         <button variant="raised">
