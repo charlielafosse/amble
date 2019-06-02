@@ -1,16 +1,39 @@
 @import url('https://fonts.googleapis.com/css?family=Libre+Franklin&display=swap');
 
 body {
-  margin: 0;
-  padding: 0;
+  animation: colorchange 100s infinite;
+  /* margin: 0;
+  padding: 0; */
   background-color: #FCFAF2;
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif; */
       font-family: 'Libre Franklin', cursive;
   -webkit-font-smoothing: antialiased;
+  /* -webkit-animation: colorchange 50s; */
   -moz-osx-font-smoothing: grayscale;
 }
+
+/*#BDC0BA  */
+/* FCFAF2 */
+
+@keyframes colorchange
+    {
+      0%   {background: #BDC0BA;}
+      25%  {background: #ECB88A;}
+      50%  {background: #A5DEE4;}
+      75%  {background: #F8C3CD;}
+      100% {background: #BDC0BA;}
+    }
+
+    /* @-webkit-keyframes colorchange
+        {
+          0%   {background: #BDC0BA;}
+          25%  {background: #ECB88A;}
+          50%  {background: #F8C3CD;}
+          75%  {background: ##58B2DC;}
+          100% {background: #BDC0BA;}
+        } */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
