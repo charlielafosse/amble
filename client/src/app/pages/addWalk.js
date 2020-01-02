@@ -24,6 +24,7 @@ class AddWalk extends Component {
       body: data
     })
       .then(res => {
+        console.log("res is ", res);
         this.setState({ redir: "/walks" });
       })
       .catch(err => console.log("fetch error", err));
@@ -31,7 +32,7 @@ class AddWalk extends Component {
 
   render() {
     if (this.state.redir) {
-      return <Redirect to={this.state.redir} />
+      return <Redirect to={this.state.redir} />;
     }
     return (
       <div className="walkForm">

@@ -1,14 +1,16 @@
 const { Pool } = require("pg");
 const url = require("url");
-
-const env = require("env2");
-env("./bleep.env");
+require("dotenv").config();
 
 let DB_URL = process.env.DB_URL;
 
-if (process.env.NODE_ENV === "test") {
-  DB_URL = process.env.TEST_DB_URL;
-}
+DB_URL = "postgres://charlieamble:password@localhost:5432/amblemac";
+
+// if (process.env.NODE_ENV === "test") {
+//   DB_URL = process.env.TEST_DB_URL;
+// }
+
+console.log("db url is ", DB_URL);
 
 if (!DB_URL) {
   throw new Error("Environment variable DB_URL must be set");
@@ -32,5 +34,7 @@ if (password) {
 }
 
 options.ssl = options.host !== "localhost";
+
+console.log("options are : ", options);
 
 module.exports = new Pool(options);

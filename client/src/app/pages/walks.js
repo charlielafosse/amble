@@ -11,9 +11,7 @@ class Walks extends Component {
       .then(data => {
         this.setState({ data });
       })
-      .catch(err => {
-        throw new Error("fetch failed!");
-      });
+      .catch(err => throw new Error("fetch failed!"));
   };
 
   // moreWalkInfo = (oneWalk) => {
@@ -30,13 +28,13 @@ class Walks extends Component {
       return <p> page loading... </p>;
     }
     const { data } = this.state;
-      return (
-        <div className="walks">
-          {data.map(walk => (
-            <Walk data={walk} moreWalkInfo={this.moreWalkInfo} />
-          ))}
-        </div>
-      );
+    return (
+      <div className="walks">
+        {data.map(walk => (
+          <Walk data={walk} moreWalkInfo={this.moreWalkInfo} />
+        ))}
+      </div>
+    );
   }
 }
 
